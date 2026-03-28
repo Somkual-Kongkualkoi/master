@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ศ.ดร. สมควร คงควรคอย | ผู้เชี่ยวชาญด้านสรีรศาสตร์ของสิ่งมีชีวิตนอกโลก</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Prompt for Thai -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // Deep Blue
+                        secondary: '#0f172a', // Slate 900
+                        accent: '#fbbf24', // Amber 400
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .book-shadow {
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            border-left: 4px solid #fff;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-accent selection:text-secondary">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-secondary/95 backdrop-blur-sm text-white shadow-lg" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 font-bold text-xl tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-user-astronaut text-accent"></i>
+                    <span>ศ.ดร. สมควร คงควรคอย</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">ชีวประวัติ</a>
+                        <a href="#publications" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">ผลงานตีพิมพ์</a>
+                        <a href="#awards" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">เกียรติประวัติ</a>
+                        <a href="#research" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">งานวิจัยปัจจุบัน</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-white hover:text-accent focus:outline-none" id="mobile-menu-btn">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-secondary border-t border-slate-700" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block hover:text-accent px-3 py-2 rounded-md text-base font-medium">ชีวประวัติ</a>
+                <a href="#publications" class="block hover:text-accent px-3 py-2 rounded-md text-base font-medium">ผลงานตีพิมพ์</a>
+                <a href="#awards" class="block hover:text-accent px-3 py-2 rounded-md text-base font-medium">เกียรติประวัติ</a>
+                <a href="#research" class="block hover:text-accent px-3 py-2 rounded-md text-base font-medium">งานวิจัยปัจจุบัน</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center relative pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left reveal active">
+                    <p class="text-accent font-semibold tracking-widest uppercase mb-3"><i class="fa-solid fa-satellite-dish mr-2"></i>นักวิจัยระดับแกแล็กซีคลาส</p>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                        ศาสตราจารย์ ดร.<br>สมควร คงควรคอย
+                    </h1>
+                    <p class="text-xl text-slate-300 mb-8 font-light leading-relaxed">
+                        "มนุษยชาติมักตั้งคำถามว่าเราอยู่โดดเดี่ยวหรือไม่... ผมตอบได้เลยว่าไม่ แถมพวกเขายังมีปัญหาลำไส้แปรปรวนที่รักษายากกว่าที่เราคิด"
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#about" class="bg-accent text-secondary hover:bg-yellow-300 font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 shadow-[0_0_15px_rgba(251,191,36,0.5)]">
+                            อ่านตำนานของผม
+                        </a>
+                        <a href="#research" class="bg-transparent border-2 border-slate-300 text-slate-300 hover:border-white hover:text-white font-bold py-3 px-8 rounded-full transition-all">
+                            ดูงานวิจัยล่าสุด
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center reveal active">
+                    <div class="relative w-full max-w-sm mx-auto">
+                        <!-- Portrait Image (9:16) -->
+                        <img src="YOUR_PORTRAIT_9x16_IMAGE_PATH_HERE.jpg" alt="Prof. Somkuan Portrait" class="w-full aspect-[9/16] object-cover rounded-3xl shadow-[0_0_40px_rgba(30,58,138,0.5)] border-4 border-white/10 relative z-10">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 z-20">
+                            <div class="bg-green-100 text-green-600 p-2 rounded-full">
+                                <i class="fa-solid fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-semibold uppercase">สถานะปัจจุบัน</p>
+                                <p class="text-sm font-bold text-slate-800">กำลังผ่าตัดกบอวกาศ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative bottom wave -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0">
+            <svg class="relative block w-full h-16" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,123.15,198.81,111.45,238.16,104.66,277.6,83.9,321.39,56.44Z" fill="#f8fafc"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- The Epic Biography -->
+    <section id="about" class="py-24 bg-slate-50 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">ตำนานแห่งสรีรศาสตร์อวกาศ</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <!-- Text Column -->
+                <div class="lg:col-span-7 bg-white rounded-2xl shadow-xl p-8 md:p-10 reveal relative overflow-hidden text-lg leading-relaxed text-slate-700">
+                    <!-- Decorative quote icon -->
+                    <i class="fa-solid fa-quote-left text-8xl text-slate-100 absolute top-4 left-4 -z-0"></i>
+                    จุดเริ่มต้นของ <strong>ศาสตราจารย์ ดร. สมควร คงควรคอย</strong> ไม่ได้สวยหรูในห้องแล็บที่เจนีวา หรือมหาวิทยาลัยชั้นนำในอเมริกา แต่เริ่มต้นขึ้นที่ <em>ร้านข้าวต้มโต้รุ่งย่านคลองหก ปทุมธานี</em> ในคืนวันฝนตกหนัก ปี 2004 ในขณะที่เขากำลังคีบไส้พะโล้เข้าปาก เขาได้พบกับ "ก้อนเมือกสีเรืองแสง" ที่ตกลงมาจากฟากฟ้า ทะลุหลังคาสังกะสีลงมาในชามข้าวต้มของเขา แทนที่จะโวยวายเจ้าของร้าน สมควรในวัยหนุ่มกลับนำเมือกนั้นกลับไปส่องกล้องจุลทรรศน์ และค้นพบว่ามันคือ <strong>"ขี้มูกที่เกิดจากการจามของนักท่องเที่ยวชาวดาวอังคาร"</strong> ที่กำลังเป็นหวัดอวกาศ นั่นคือจุดเริ่มต้นที่ทำให้เขาเปลี่ยนสายจากการเรียนสัตวแพทย์ มาเป็นผู้บุกเบิกสาขา "สรีรศาสตร์ของสิ่งมีชีวิตนอกโลก" คนแรกและคนเดียวของประเทศไทย
+                </p>
+                
+                <p class="mb-6 relative z-10">
+                    ชื่อเสียงของเขาโด่งดังระดับพหุภพ (Multiverse) ในเหตุการณ์ <em>"วิกฤตการณ์ก๊าซพลูโต"</em> เมื่อปี 2012 เอกอัครราชทูตที่เป็นสิ่งมีชีวิตแบบก๊าซจากดาวพลูโต เกิดอาการ "หัวใจล้มเหลว" (ซึ่งจริงๆ แล้วคือการรั่วไหลของแรงดันคอร์ติซอลในแกนกลางลำตัว) กลางเวทีประชุมสมาพันธ์ทางช้างเผือก แพทย์มนุษย์ต่างดาวทุกดวงดาวต่างยืนงงเป็นไก่ตาแตก แต่ศ.ดร.สมควร อาศัยไหวพริบ คว้า <strong>"เครื่องดูดฝุ่นยี่ห้อ Dyson" และ "ที่สูบลมจักรยานแบบเหยียบ"</strong> มาทำการ CPR ผายปอดแบบสลับขั้วแรงดัน จนสามารถดึงสติท่านทูตกลับมาได้สำเร็จ เหตุการณ์นั้นทำให้เขาได้รับฉายาว่า <em>"หัตถ์พระเจ้าแห่งระบบสุริยะ"</em>
+                </p>
+                
+                <p class="mb-6 relative z-10">
+                    ผลงานโบว์แดงที่ทำให้เขาได้รับการบรรจุเป็นภาคีสมาชิกราชบัณฑิตยสถานแห่งกาแล็กซี คือการเดินทางไปทำวิจัยภาคสนามที่ระบบดาว Alpha Centauri เป็นเวลา 4 ปีโลก เขาเป็นคนแรกที่สามารถไขปริศนาทางสรีรวิทยาของชาวเซนทอเรียนได้สำเร็จว่า <strong>"ระบบทางเดินอาหารของพวกเขาไม่ได้ขับเคลื่อนด้วยคาร์โบไฮเดรต หรือโปรตีน แต่ทำงานด้วยการบริโภค 'ดราม่าบนอินเทอร์เน็ต' และ 'มุกแป้ก'"</strong> ยิ่งมีคนเถียงกันบนทวิตเตอร์ (X) มากเท่าไหร่ ชาวเซนทอเรียนยิ่งมีอายุยืนยาวและมีผิวพรรณเปล่งปลั่งขึ้นเท่านั้น การค้นพบนี้พลิกโฉมวงการโภชนาการอวกาศไปตลอดกาล
+                </p>
+
+                <div class="mt-8 p-6 bg-blue-50 border-l-4 border-primary rounded-r-lg relative z-10 font-medium italic text-primary">
+                    "การผ่าตัดเอเลี่ยนไม่ใช่เรื่องยาก สิ่งที่ยากคือการหาซื้อถุงมือยางไซส์ XXXL ที่มีช่องใส่สำหรับ 7 นิ้วมือต่างหาก" <br>— ศ.ดร. สมควร คงควรคอย
+                </div>
+                </div>
+                
+                <!-- Images Column (2x 16:9) -->
+                <div class="lg:col-span-5 flex flex-col gap-6 reveal delay-100">
+                    <!-- Image 1 (16:9): แนะนำให้ใช้รูปบรรยากาศร้านข้าวต้ม หรือจุดเริ่มต้น -->
+                    <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+                        <img src="YOUR_16x9_IMAGE_1_PATH_HERE.jpg" alt="Street Food Origin" class="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <!-- Image 2 (16:9): แนะนำให้ใช้รูปกำลังทำ CPR หรือวีรกรรมสุดล้ำ -->
+                    <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+                        <img src="YOUR_16x9_IMAGE_2_PATH_HERE.jpg" alt="Intergalactic CPR" class="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="publications" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">ตำราวิชาการ (Best Sellers)</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+                <p class="mt-4 text-slate-500 max-w-2xl mx-auto">หนังสือที่นักศึกษาสายชีววิทยาอวกาศทุกคน "ต้องมี" (แม้ส่วนใหญ่จะซื้อไปหนุนหัวนอนเพราะความหนาระดับ 2,000 หน้า)</p>
+            </div>
+
+            <!-- Image 3 (16:9): แนะนำให้ใช้รูปศาสตราจารย์กับหนังสือเล่มหนา หรือในห้องสมุด -->
+            <div class="max-w-4xl mx-auto mb-16 reveal overflow-hidden rounded-2xl shadow-xl border-4 border-white">
+                <img src="YOUR_16x9_IMAGE_3_PATH_HERE.jpg" alt="Prof. Somkuan with his books" class="w-full aspect-video object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Book 1 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 reveal group border border-slate-100 p-6 flex flex-col items-center text-center">
+                    <div class="w-40 h-56 bg-gradient-to-br from-red-800 to-black rounded-r-lg book-shadow relative mb-6 flex flex-col justify-center p-4">
+                        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30"></div>
+                        <h3 class="text-yellow-400 font-bold text-sm relative z-10 tracking-widest leading-tight">กายวิภาคศาสตร์<br>ของเอเลี่ยน<br>ฉบับกระเป๋า</h3>
+                        <p class="text-white text-[10px] mt-4 relative z-10 border-t border-white/30 pt-2">ศ.ดร. สมควร</p>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">กายวิภาคศาสตร์ของเอเลี่ยนฉบับกระเป๋า</h3>
+                    <p class="text-sm text-accent font-bold mb-3">พิมพ์ครั้งที่ 18</p>
+                    <p class="text-slate-600 text-sm">คู่มือเอาตัวรอดในห้องแล็บ มีบทย่อยพิเศษ: <em>"ทำอย่างไรไม่ให้โดนกินระหว่างผ่าตัด"</em> และ <em>"วิธีแยกแยะระหว่างเส้นเลือดดำกับหนวดดูดเลือด"</em></p>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 reveal group border border-slate-100 p-6 flex flex-col items-center text-center delay-100">
+                    <div class="w-40 h-56 bg-gradient-to-br from-green-700 to-teal-900 rounded-r-lg book-shadow relative mb-6 flex flex-col justify-center p-4">
+                        <h3 class="text-white font-bold text-sm relative z-10 tracking-widest leading-tight">สรีรวิทยา<br>ชาวดาวอังคาร</h3>
+                        <div class="w-12 h-12 rounded-full border-2 border-green-300 mx-auto mt-4 flex items-center justify-center text-green-300 text-xs">Mars</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">สรีรวิทยาของชาวดาวอังคาร</h3>
+                    <p class="text-sm text-accent font-bold mb-3">รางวัลหนังสือดีเด่นแห่งทศวรรษ</p>
+                    <p class="text-slate-600 text-sm">เจาะลึกระบบเผาผลาญที่อธิบายได้ว่า <em>ทำไมชาวดาวอังคารถึงแพ้ "กะเพราไก่ไข่ดาว" อย่างรุนแรง</em> (สปอยล์: เพราะใบกะเพรามีฤทธิ์ทำลายระบบสืบพันธุ์แบบแยกส่วนของพวกเขา)</p>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 reveal group border border-slate-100 p-6 flex flex-col items-center text-center delay-200">
+                    <div class="w-40 h-56 bg-gradient-to-br from-indigo-900 to-purple-900 rounded-r-lg book-shadow relative mb-6 flex flex-col justify-center p-4 border border-purple-400">
+                        <i class="fa-solid fa-dna text-3xl text-purple-300 mb-3"></i>
+                        <h3 class="text-purple-100 font-bold text-xs relative z-10 tracking-widest leading-tight">พันธุกรรมทะลุมิติ</h3>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">พันธุกรรมทะลุมิติ: การผสมข้ามสายพันธุ์</h3>
+                    <p class="text-sm text-accent font-bold mb-3">ฉบับปกแข็ง (กันกระสุน)</p>
+                    <p class="text-slate-600 text-sm">ว่าด้วยความเป็นไปได้ในการปฏิสนธิระหว่างมนุษย์โลกกับมนุษย์ต่างดาว พร้อมข้อควรระวังเรื่อง <em>"ลูกที่เกิดมาอาจคายกรดซัลฟิวริกตอนเรอ"</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journals & Papers -->
+    <section class="py-24 bg-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">ผลงานตีพิมพ์ในวารสารวิชาการ</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded-full mb-6"></div>
+                <p class="text-slate-600">ตีพิมพ์ในวารสารระดับ Q1 (ของระบบสุริยะอื่น)</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Journal 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md reveal border-l-4 border-primary hover:bg-blue-50 transition-colors">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-slate-800 leading-snug">"การทำงานของตับในสิ่งมีชีวิตซิลิกอนเบสเมื่อได้รับสัมผัสจากคลื่นเสียงหมอลำซิ่ง: กรณีศึกษาชนเผ่าครอกเกน"</h3>
+                        <span class="bg-blue-100 text-primary text-xs font-bold px-2 py-1 rounded">2023</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-2">ตีพิมพ์ใน: <em class="text-slate-700">Journal of Xenobiological Nonsense (Impact Factor: 42.0)</em></p>
+                    <p class="text-sm text-slate-600"><strong>บทคัดย่อ:</strong> การวิจัยพบว่าจังหวะกลองและเสียงแคนความถี่ 140 BPM มีผลทำให้พันธะซิลิกอนในตับของชาวครอกเกนเกิดการสั่นพ้อง ส่งผลให้พวกเขาสามารถสังเคราะห์แสงได้แม้อยู่ในผับ</p>
+                </div>
+
+                <!-- Journal 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md reveal border-l-4 border-accent hover:bg-yellow-50 transition-colors">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-slate-800 leading-snug">"วิเคราะห์โครงสร้างหนวดเกลียวของเผ่าพันธุ์เซตาวรี่: มีไว้จับอาหาร, ต่อสู้, หรือแค่เอาไว้เกาหลัง?"</h3>
+                        <span class="bg-blue-100 text-primary text-xs font-bold px-2 py-1 rounded">2021</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-2">ตีพิมพ์ใน: <em class="text-slate-700">Intergalactic Anatomy Review</em></p>
+                    <p class="text-sm text-slate-600"><strong>บทคัดย่อ:</strong> สยบข้อถกเถียงยาวนานกว่าร้อยปี ด้วยการผ่าตัดพิสูจน์เส้นประสาทไขสันหลัง พบว่าหนวดเกลียวอันน่าเกรงขาม มีระบบประสาทสัมผัสที่เชื่อมตรงกับจุดศูนย์กลางความฟิน ทำให้สรุปได้ว่า หน้าที่หลักคือ "การเกาหลังตัวเอกอย่างเมามันส์"</p>
+                </div>
+
+                <!-- Journal 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md reveal border-l-4 border-green-500 hover:bg-green-50 transition-colors">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-slate-800 leading-snug">"พลวัตของระบบขับถ่ายในมิติที่ 4: ทำไมส้วมมิติปกติถึงกดไม่ลงเมื่อชาวดาวซิริอุสมาเยือนโลก"</h3>
+                        <span class="bg-blue-100 text-primary text-xs font-bold px-2 py-1 rounded">2019</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-2">ตีพิมพ์ใน: <em class="text-slate-700">Transactions on Extraterrestrial Sanitation</em></p>
+                    <p class="text-sm text-slate-600"><strong>บทคัดย่อ:</strong> เสนอสมการทางคณิตศาสตร์ในการออกแบบชักโครกที่รองรับมวลสารที่ขยายตัวในเวลาที่ติดลบ (Negative Time Expansion) ลดปัญหาท่อตันข้ามมิติได้อย่างมีนัยสำคัญ</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10 reveal">
+                <button class="text-primary font-bold hover:text-accent transition-colors">
+                    ดูรายการตีพิมพ์ทั้งหมด (อีก 142 ฉบับ) <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-24 bg-secondary text-white relative">
+        <!-- Subtle star background -->
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-accent mb-4">เกียรติประวัติ & รางวัลระดับจักรวาล</h2>
+                <div class="w-24 h-1 bg-white mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Award 1 -->
+                <div class="bg-slate-800/80 backdrop-blur p-8 rounded-2xl border border-slate-700 text-center reveal hover:border-accent transition-all group">
+                    <div class="w-20 h-20 mx-auto bg-slate-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-peace text-4xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-white">รางวัลโนเบลสาขาสันติภาพอวกาศ</h3>
+                    <p class="text-slate-400 text-sm">จากการใช้ความรู้ด้านสรีรวิทยา ไกล่เกลี่ยข้อพิพาทเรื่อง "การแย่งที่จอดรถยูเอฟโอบนดวงจันทร์" ระหว่าง 3 เผ่าพันธุ์ได้อย่างสันติ</p>
+                </div>
+
+                <!-- Award 2 -->
+                <div class="bg-slate-800/80 backdrop-blur p-8 rounded-2xl border border-slate-700 text-center reveal delay-100 hover:border-accent transition-all group">
+                    <div class="w-20 h-20 mx-auto bg-slate-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-medal text-4xl text-amber-600"></i> <!-- Gold color visually -->
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-white">เหรียญทองเกียรติยศ (ความอึด)</h3>
+                    <p class="text-slate-400 text-sm">มอบให้ในฐานะ "ผู้รอดชีวิตจากการถูกมนุษย์ต่างดาวลักพาตัว (Abduction) ครบ 10 ครั้งโดยไม่เสียสติ" (แถมยังแอบขโมยอุปกรณ์แพทยข์ของเขาติดมือกลับมาด้วย)</p>
+                </div>
+
+                <!-- Award 3 -->
+                <div class="bg-slate-800/80 backdrop-blur p-8 rounded-2xl border border-slate-700 text-center reveal delay-200 hover:border-accent transition-all group">
+                    <div class="w-20 h-20 mx-auto bg-slate-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hand-holding-medical text-4xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-white">Xeno-Surgeon of the Year</h3>
+                    <p class="text-slate-400 text-sm">ศัลยแพทย์เอเลี่ยนยอดเยี่ยม 5 ปีซ้อน จากสถิติ "ผ่าตัดพลาดตัดหนวดผิดเส้นน้อยที่สุดในกาแล็กซี"</p>
+                </div>
+
+                <!-- Award 4 -->
+                <div class="bg-slate-800/80 backdrop-blur p-8 rounded-2xl border border-slate-700 text-center reveal delay-300 hover:border-accent transition-all group">
+                    <div class="w-20 h-20 mx-auto bg-slate-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-trophy text-4xl text-pink-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-white">รางวัลขวัญใจชาวดาวศุกร์</h3>
+                    <p class="text-slate-400 text-sm">โหวตโดยสมาคมแม่บ้านดาวศุกร์ จากการคิดค้น "ครีมบำรุงผิวที่ทนทานต่อฝนกรดกำมะถัน" สกัดจากเมือกหอยทากอวกาศ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Research -->
+    <section id="research" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">โครงการวิจัยสาธารณะที่กำลังดำเนินการ (Current Public Researches)</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+                <p class="mt-4 text-slate-500">โครงการเหล่านี้เปิดรับเงินทุนบริจาค (รับเป็นเงินบาทคริปโต หรือแร่ยูเรเนียมสกัดบริสุทธิ์เท่านั้น)</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="border-2 border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-shadow reveal overflow-hidden flex flex-col bg-white">
+                    <!-- Image 4 (16:9): แนะนำให้ใช้รูปโต๊ะทดลองละลาย หรือเอนไซม์สสารมืด -->
+                    <img src="YOUR_16x9_IMAGE_4_PATH_HERE.jpg" alt="Dark Matter Enzyme Research" class="w-full aspect-video object-cover border-b-2 border-slate-100">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="bg-red-100 text-red-600 p-3 rounded-lg">
+                                <i class="fa-solid fa-biohazard text-2xl"></i>
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">โครงการศึกษาเอนไซม์ย่อยสลายสสารมืด</h3>
+                    <p class="text-slate-600 mb-6 line-clamp-3">
+                        ทำการวิจัยเอนไซม์ในกระเพาะอาหารของสิ่งมีชีวิตสายพันธุ์ <strong>"ตัวเขมือบดาว" (Star Eaters)</strong> เพื่อหาวิธีนำมาประยุกต์ใช้ในการย่อยสลายขยะพลาสติกบนโลก ปัญหาปัจจุบัน: เอนไซม์มันดันย่อยสลายบีกเกอร์ทดลอง บีกเกอร์แก้ว และโต๊ะสแตนเลสในแล็บไปด้วย
+                    </p>
+                    <div class="mb-2 flex justify-between text-sm font-semibold text-slate-700">
+                        <span>ความคืบหน้าโครงการ</span>
+                        <span>45%</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2.5 mt-auto">
+                        <div class="bg-primary h-2.5 rounded-full" style="width: 45%"></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="border-2 border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-shadow reveal delay-100 overflow-hidden flex flex-col bg-white">
+                    <!-- Image 5 (16:9): แนะนำให้ใช้รูปที่เหลือ หรือเกี่ยวกับสปา/ต่างดาว -->
+                    <img src="YOUR_16x9_IMAGE_5_PATH_HERE.jpg" alt="Alien Spa Protocol" class="w-full aspect-video object-cover border-b-2 border-slate-100">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="bg-teal-100 text-teal-600 p-3 rounded-lg">
+                                <i class="fa-solid fa-spa text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">โปรโตคอลสปาและการนวดแผนไทยข้ามสายพันธุ์</h3>
+                    <p class="text-slate-600 mb-6 line-clamp-3">
+                        การพัฒนาท่านวดแผนไทยประยุกต์ เพื่อรองรับสรีระแบบ <strong>8 แกนสมมาตร และไร้กระดูกสันหลัง ของชาวดาวซิริอุส</strong> โครงการนี้ได้รับความร่วมมือจากหมอนวดแผนไทยย่านวัดโพธิ์ เป้าหมายคือการผลักดันให้ประเทศไทยเป็น Hub การท่องเที่ยวเชิงสุขภาพระดับกาแล็กซี
+                    </p>
+                    <div class="mb-2 flex justify-between text-sm font-semibold text-slate-700">
+                        <span>ความคืบหน้าโครงการ</span>
+                        <span>82%</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2.5 mt-auto">
+                        <div class="bg-accent h-2.5 rounded-full" style="width: 82%"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-6 flex justify-center space-x-6 text-2xl">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-researchgate"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-galactic-senate"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-solid fa-satellite"></i></a>
+            </div>
+            <p class="mb-2"><strong>ศูนย์วิจัยสรีรศาสตร์นอกโลก (สาขาโลก)</strong></p>
+            <p class="text-sm mb-6">ห้องแล็บลับใต้ดิน ชั้น B4, อาคารร้างหลังร้านหมูกระทะ, ปทุมธานี, ประเทศไทย 12120</p>
+            <p class="text-xs text-slate-600">&copy; 2026 Prof. Dr. Somkuan Kongkuankoy. สงวนลิขสิทธิ์ทั่วทั้งจักรวาล (ห้ามทำซ้ำในมิติขนานอื่นโดยไม่ได้รับอนุญาต)</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.replace('bg-secondary/95', 'bg-secondary/100');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.replace('bg-secondary/100', 'bg-secondary/95');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer for Reveal Animations
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // when to reveal
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+</html>
